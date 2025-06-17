@@ -7,22 +7,22 @@ on:
     branches: [ main ]
 
 jobs:
-  run-eda:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.10  # ✅ Modern supported version
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install pandas matplotlib seaborn gradio ollama
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install pandas matplotlib seaborn gradio ollama
 
-      - name: Run script
-        run: python "DeepSeek EDA Automation.py"
+    - name: Run EDA Script
+      run: python "DeepSeek EDA Automation.py"
