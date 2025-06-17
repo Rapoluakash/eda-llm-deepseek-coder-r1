@@ -1,3 +1,5 @@
-pandas
 gradio
+pandas
+matplotlib
+seaborn
 ollama
