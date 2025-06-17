@@ -17,12 +17,12 @@ jobs:
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: 3.10  # ✅ Use a valid version here
 
       - name: 📦 Install dependencies
         run: |
           pip install --upgrade pip
           pip install pandas matplotlib seaborn gradio ollama
 
-      - name: 🚀 Run the EDA script
+      - name: 🚀 Run EDA script
         run: python "DeepSeek EDA Automation.py"
